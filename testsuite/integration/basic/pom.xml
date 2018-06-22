@@ -117,6 +117,12 @@
                         <artifactId>maven-surefire-plugin</artifactId>
                         <configuration>
                             <runOrder>alphabetical</runOrder>
+
+                            <systemPropertyVariables combine.children="append">
+                                <!-- Storing Narayana transaction data for transaction started at client side under target directory -->
+                                <ObjectStoreEnvironmentBean.objectStoreDir>target/NarayanaObjectStore</ObjectStoreEnvironmentBean.objectStoreDir>
+                                <ObjectStoreEnvironmentBean.communicationStore.objectStoreDir>target/NarayanaObjectStore</ObjectStoreEnvironmentBean.communicationStore.objectStoreDir>
+                            </systemPropertyVariables>
                         </configuration>
                         <executions combine.children="append">
 
